@@ -21,7 +21,6 @@ import javax.swing.JTextField;
  */
 public class Main extends JPanel {
 
-    //public static int[] ar = {12, 14, 123, 45, 89, 12, 34, 45, 65, 67, 80, 34, 150};
     public static int[] ar = new int[65];
 
     /**
@@ -97,19 +96,19 @@ public class Main extends JPanel {
             // code for Selection Sort 
             case 2:                
                 a.setTitle("Sorting Visualizer - Selection Sort");
-                for (int step = 0; step < ar.length - 1; step++) {
-                    int min_idx = step;
+                for (int j = 0; j < ar.length - 1; j++) {
+                    int min_index = j;
 
-                    for (int i = step + 1; i < ar.length; i++) {
-                        if (ar[i] < ar[min_idx]) {
-                            min_idx = i;
+                    for (int i = j + 1; i < ar.length; i++) {
+                        if (ar[i] < ar[min_index]) {
+                            min_index = i;
                         }
                     }
 
                     // put min at the correct position
-                    int temp = ar[step];
-                    ar[step] = ar[min_idx];
-                    ar[min_idx] = temp;
+                    int temp = ar[j];
+                    ar[j] = ar[min_index];
+                    ar[min_index] = temp;
                 
                 try {
                     Thread.sleep(100);

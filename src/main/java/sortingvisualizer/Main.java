@@ -28,7 +28,6 @@ public class Main extends JPanel {
     public static void main(String[] args) {
         // TODO code application logic here
         JFrame a = new JFrame();
-        JLabel bubbleSort = new JLabel("BUBBLE SORT");
         Main b = new Main();
         a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.setSize(1000, 600);
@@ -40,7 +39,7 @@ public class Main extends JPanel {
         a.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         Random rd = new Random();
-        int algorithm = rd.nextInt(3);
+        int algorithm = 2;//rd.nextInt(3);
         System.out.println(algorithm);
 
         switch (algorithm) {
@@ -106,6 +105,7 @@ public class Main extends JPanel {
                 }
                 b.repaint();
         }
+                break;
         }
 
     }

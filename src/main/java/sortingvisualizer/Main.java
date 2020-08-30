@@ -48,7 +48,7 @@ public class Main extends JPanel {
         
         
 
-        //a random number to decide with algorithm to use
+        //a random number to decide which algorithm to use
         int algorithm = rd.nextInt(3);
         System.out.println(algorithm);
 

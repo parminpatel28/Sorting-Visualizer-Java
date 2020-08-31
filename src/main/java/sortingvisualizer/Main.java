@@ -13,7 +13,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /**
  *
@@ -26,7 +25,6 @@ public class Main extends JPanel {
     /**
      * @param args the command line arguments
      */
-    
     public static void main(String[] args) {
         // TODO code application logic here
         //Frame setting up
@@ -34,23 +32,17 @@ public class Main extends JPanel {
         Main b = new Main();
         a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         a.setSize(1000, 600);
-        JTextField newTitle = new JTextField("Some Title"); 
-        newTitle.setBounds(80, 40, 225, 20);
         a.setVisible(true);
-
         a.add(b);
 
         a.setExtendedState(JFrame.MAXIMIZED_BOTH);
         Random rd = new Random();
-        for(int p = 0; p < 65;p++){
+        for (int p = 0; p < 65; p++) {
             ar[p] = rd.nextInt(550);
         }
-        
-        
 
         //a random number to decide which algorithm to use
         int algorithm = rd.nextInt(3);
-        System.out.println(algorithm);
 
         switch (algorithm) {
             //code for Bubble Sort
@@ -74,7 +66,7 @@ public class Main extends JPanel {
 
                 }
                 break;
-             //code for Insertion Sort
+            //code for Insertion Sort
             case 1:
                 a.setTitle("Sorting Visualizer - Insertion Sort");
                 for (int i = 0; i < ar.length; i++) {
@@ -94,7 +86,7 @@ public class Main extends JPanel {
                 }
                 break;
             // code for Selection Sort 
-            case 2:                
+            case 2:
                 a.setTitle("Sorting Visualizer - Selection Sort");
                 for (int j = 0; j < ar.length - 1; j++) {
                     int min_index = j;
@@ -109,13 +101,13 @@ public class Main extends JPanel {
                     int temp = ar[j];
                     ar[j] = ar[min_index];
                     ar[min_index] = temp;
-                
-                try {
-                    Thread.sleep(100);
-                } catch (Exception ex) {
+
+                    try {
+                        Thread.sleep(100);
+                    } catch (Exception ex) {
+                    }
+                    b.repaint();
                 }
-                b.repaint();
-        }
                 break;
         }
 
@@ -130,6 +122,7 @@ public class Main extends JPanel {
         draw(g);
 
     }
+
     // draws the array that need to be sorted 
     public void draw(Graphics g) {
         for (int x = 0; x < ar.length; x++) {
